@@ -1,0 +1,18 @@
+Welcome to {{ company_name }}, {{ customer_name }}! 🎉
+
+We're excited to have you as part of the {{ company_name }} family. Your fast, reliable fiber internet is now up and running. Below are your Wi-Fi details:
+
+📶 Wi-Fi Network (SSID): {{ ssid }}
+🔑 Password: {{ password }}
+👤 Account Number: {{ account_number }}
+
+You can now connect all your devices and enjoy blazing-fast speeds, crystal-clear streaming, and seamless browsing.
+
+If you ever need assistance, our friendly support team is available 24/7 at {{ support_phone }}.
+
+Welcome aboard, {{ customer_name }} — let the streaming, browsing, and connecting begin! 🚀
+
+{{ technician_name }}
+{{ technician_title }}
+{{ company_name }}    |    {{ service_type }}
+{{ technician_email }}
