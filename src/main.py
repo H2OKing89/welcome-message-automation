@@ -5,7 +5,6 @@ from rich.console import Console
 from rich.prompt import Prompt, Confirm
 from rich.panel import Panel
 from rich.table import Table
-from rich.progress import Progress
 from rich.status import Status
 from rich.logging import RichHandler
 from models.customer import Customer
@@ -28,10 +27,14 @@ def display_customer_info(customer, console):
     table.add_column("Field", style="cyan", width=15)
     table.add_column("Value", style="green")
     
+    # Mask sensitive information for security
+    masked_ssid = customer.ssid[:4] + "*" * (len(customer.ssid) - 4) if len(customer.ssid) > 4 else "****"
+    masked_password = "****"
+    
     table.add_row("Name", customer.name)
     table.add_row("Account Number", customer.account_number)
-    table.add_row("SSID", customer.ssid)
-    table.add_row("Password", customer.password)
+    table.add_row("SSID", masked_ssid)
+    table.add_row("Password", masked_password)
     table.add_row("Phone Number", customer.phone_number)
     
     console.print(table)
@@ -95,18 +98,17 @@ def main():
         log.error("Device ID not found in environment variables")
         return
     
-    # Enhanced API interaction with status and progress
+    # Enhanced API interaction with status
     try:
         with Status("Connecting to TextBee API...", console=console) as status:
             client = TextBeeClient(api_key, device_id)
-            log.info("Connected to TextBee API")
             
             status.update("Sending message...")
+            success, response = client.send_welcome_message(customer.phone_number, welcome_message)
             
-            with Progress() as progress:
-                task = progress.add_task("[green]Sending message...", total=1)
-                success, response = client.send_welcome_message(customer.phone_number, welcome_message)
-                progress.update(task, advance=1)
+            # Only log connection success after successful API call
+            if success:
+                log.info("Successfully connected to TextBee API and sent message")
         
         if success:
             console.print("✅ Message sent successfully!", style="bold green")
