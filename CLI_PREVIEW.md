@@ -2,10 +2,10 @@
 
 This shows what the enhanced Rich UI looks like when running the application:
 
-```log
-╭───────────────────────────────────────────╮
-│ 🎉 company Welcome Message Automation 🎉 │
-╰───────────────────────────────────────────╯
+```text
+╭─────────────────────────────────────────╮
+│ 🎉 Welcome Message Automation Tool 🎉  │
+╰─────────────────────────────────────────╯
 
 [18:58:50] INFO     Starting welcome message process
 Customer Information
@@ -27,14 +27,23 @@ Customer Information
 └─────────────────┴───────────────────┘
 
 ╭───────────────────────────────────────────── Message Preview ─────────────────────────────────────────────╮
-│ Welcome to Company, John Doe! 🎉                                                                         │
+│ Welcome to YourCompany, John Doe! 🎉                                                                     │
 │                                                                                                           │
-│ We're excited to have you as part of the Company family. Your fast, reliable                              │
+│ We're excited to have you as part of the YourCompany family. Your fast, reliable                          │
 │ fiber internet is now up and running. Below are your Wi-Fi details:                                       │
 │                                                                                                           │
 │ 📶 Wi-Fi Network (SSID): Love My WIFI                                                                    │
 │ 🔑 Password: 123456789                                                                                   │
 │ 👤 Account Number: 123456789                                                                             │
+│                                                                                                          │
+│ If you need assistance, our support team is available 24/7 at 1-800-XXX-XXXX.                             │
+│                                                                                                           │
+│ Welcome aboard, John Doe — let the streaming, browsing, and connecting begin! 🚀                         │
+│                                                                                                           │
+│ Tech Name                                                                                                 │
+│ Installation Technician                                                                                   │
+│ YourCompany | Residential                                                                                 │
+│ tech@yourcompany.com                                                                                      │
 ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 
 Send this message? [y/n]: y

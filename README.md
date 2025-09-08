@@ -2,14 +2,14 @@
 
 # 🎉 Welcome Message Automation
 
-<img src="assets/images/logos/allo-dimensional.webp" alt="ALLO Fiber Logo" width="200" style="border-radius: 10px; margin: 20px 0;"/>
+<img src="assets/images/samples/sample_message.png" alt="Sample Welcome Message" width="300" style="border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"/>
 
 [![Python](https://img.shields.io/badge/Python-3.13+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Rich](https://img.shields.io/badge/Rich-Terminal-brightgreen.svg?style=for-the-badge&logo=python&logoColor=white)](https://rich.readthedocs.io/)
 [![TextBee](https://img.shields.io/badge/TextBee-API-orange.svg?style=for-the-badge)](https://textbee.dev)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-*A beautiful, feature-rich CLI application for automating customer welcome messages with stunning visual interface*
+*A beautiful, feature-rich CLI application for automating customer welcome messages for ISPs and service providers*
 
 [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-documentation) • [🎨 Features](#-features) • [🛠️ Development](#️-development)
 
@@ -57,6 +57,8 @@
 </td>
 </tr>
 </table>
+
+> **💡 Customization Note**: This tool was originally developed for ISP customer onboarding but can be easily customized for any service provider. Simply update the message templates in the `templates/` directory to match your company's branding and requirements.
 
 ---
 
@@ -146,17 +148,29 @@ The application features a beautiful Rich-powered interface with tables, panels,
 | **🚀 Send** | Send via TextBee API with progress tracking and status updates |
 | **✅ Confirm** | Get detailed delivery confirmation with batch ID and recipient count |
 
+### 📱 Sample Output
+
+Here's what customers receive on their phones:
+
+<div align="center">
+<img src="assets/images/samples/sample_message.png" alt="Sample SMS Message Received" width="250" style="border-radius: 15px; margin: 15px 0; box-shadow: 0 6px 20px rgba(0,0,0,0.15);"/>
+</div>
+
+*Example of the formatted welcome message as received by customers*
+
 ---
 
 ## 🎨 Rich UI Components
 
 ### 🎭 Visual Elements
+
 - 🎨 **Rich Panels** - Bordered content areas
 - 📊 **Data Tables** - Structured information display  
 - ⏳ **Progress Bars** - Real-time operation feedback
 - 🌀 **Status Spinners** - Loading indicators
 
 ### 🔒 Security Features
+
 - 🎭 **Credential Masking** - Hidden passwords
 - 🔐 **Partial SSID Display** - First 4 chars + ****
 - 📝 **Rich Logging** - Timestamped events
@@ -279,7 +293,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ and ☕ by the ALLO Team**
+**Made with ❤️ and ☕ by Quentin**
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/H2OKing89/welcome-message-automation)
 [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://python.org)
