@@ -41,7 +41,27 @@ def display_customer_info(customer, console):
     table.add_column("Value", style="green")
     
     # Mask sensitive information for security
-    masked_ssid = customer.ssid[:4] + "*" * (len(customer.ssid) - 4) if len(customer.ssid) > 4 else "****"
+    # For SSID: Less sensitive than password, use word-aware masking
+    def mask_ssid(ssid):
+        """Apply smart masking that preserves word structure"""
+        if len(ssid) <= 6:
+            # Short SSIDs: show first 2 chars + ****
+            return ssid[:2] + "****" if len(ssid) > 2 else "****"
+        elif " " in ssid:
+            # SSIDs with spaces: show first word + mask rest
+            words = ssid.split(" ")
+            # Always show the first word (regardless of length) + mask the rest
+            first_word = words[0]
+            remaining_length = len(ssid) - len(first_word) - 1  # -1 for the space
+            return first_word + " " + "*" * remaining_length
+        else:
+            # Single word SSID: show first half
+            midpoint = len(ssid) // 2
+            return ssid[:midpoint] + "*" * (len(ssid) - midpoint)
+    
+    masked_ssid = mask_ssid(customer.ssid)
+    
+    # Password should always be completely hidden
     masked_password = "****"
     
     table.add_row("Name", customer.name)
@@ -84,9 +104,8 @@ def main():
     # Display customer information in a table
     display_customer_info(customer, console)
 
-    # Generate the welcome message with status
-    with console.status("[bold green]Generating welcome message...", spinner="dots") as status:
-        welcome_message = customer.format_welcome_message()
+    # Generate the welcome message
+    welcome_message = customer.format_welcome_message()
     
     # Display message preview in a panel
     console.print(Panel(welcome_message, title="Message Preview", border_style="green"))

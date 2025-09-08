@@ -164,6 +164,6 @@ docs/build/
 __pycache__/
 *.pyc
 
-# Personal and Company-specific ignores. assets/ Allo logos and images
+# Personal and Company-specific ignores. logos/ Allo logos and images
 welcome_message.txt
-assets/
+logos/

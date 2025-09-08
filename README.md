@@ -62,10 +62,9 @@
 
 ## 🏗️ Project Architecture
 
-```html
-<div style="font-family: 'Courier New', monospace; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: white;">
+```
 📦 welcome-message-automation/
-├── 🎯 <strong>src/</strong>                      # Core application code
+├── 🎯 src/                           # Core application code
 │   ├── 🚀 main.py                    # Enhanced Rich UI application
 │   ├── 🌐 api/
 │   │   └── 📡 textbee_client.py      # TextBee API integration
@@ -80,7 +79,6 @@
 ├── 🖼️ assets/images/logos/           # Brand assets
 ├── 📋 requirements.txt               # Python dependencies
 └── 🔐 .env                          # Environment variables
-</div>
 ```
 
 ---
@@ -131,74 +129,38 @@ TEXTBEE_DEVICE_ID=your_device_id_here
 
 ## 🎮 Usage
 
-<div align="center">
-
 ### Launch the Application
 
 ```bash
 python src/main.py
 ```
 
-<img src="https://via.placeholder.com/600x400/667eea/white?text=Rich+CLI+Interface+Preview" alt="CLI Preview" style="border-radius: 10px; margin: 20px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"/>
-
-*Beautiful Rich-powered interface with tables, panels, and real-time feedback*
-
-</div>
+The application features a beautiful Rich-powered interface with tables, panels, and real-time feedback for an enhanced user experience.
 
 ### 🔄 Application Flow
 
-<table>
-<tr>
-<td align="center" width="25%">
-<strong>📝 Input</strong><br/>
-<img src="https://via.placeholder.com/100x100/4CAF50/white?text=📝" style="border-radius: 50%;"/><br/>
-Enter customer details with guided prompts
-</td>
-<td align="center" width="25%">
-<strong>👀 Preview</strong><br/>
-<img src="https://via.placeholder.com/100x100/2196F3/white?text=👀" style="border-radius: 50%;"/><br/>
-Review formatted message in beautiful panel
-</td>
-<td align="center" width="25%">
-<strong>🚀 Send</strong><br/>
-<img src="https://via.placeholder.com/100x100/FF9800/white?text=🚀" style="border-radius: 50%;"/><br/>
-Send via TextBee API with progress tracking
-</td>
-<td align="center" width="25%">
-<strong>✅ Confirm</strong><br/>
-<img src="https://via.placeholder.com/100x100/9C27B0/white?text=✅" style="border-radius: 50%;"/><br/>
-Get detailed delivery confirmation
-</td>
-</tr>
-</table>
+| Step | Description |
+|------|-------------|
+| **📝 Input** | Enter customer details with guided prompts and emojis |
+| **👀 Preview** | Review formatted message in beautiful bordered panel |
+| **🚀 Send** | Send via TextBee API with progress tracking and status updates |
+| **✅ Confirm** | Get detailed delivery confirmation with batch ID and recipient count |
 
 ---
 
 ## 🎨 Rich UI Components
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+### 🎭 Visual Elements
+- 🎨 **Rich Panels** - Bordered content areas
+- 📊 **Data Tables** - Structured information display  
+- ⏳ **Progress Bars** - Real-time operation feedback
+- 🌀 **Status Spinners** - Loading indicators
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: white;">
-<h3>🎭 Visual Elements</h3>
-<ul>
-<li>🎨 <strong>Rich Panels</strong> - Bordered content areas</li>
-<li>📊 <strong>Data Tables</strong> - Structured information display</li>
-<li>⏳ <strong>Progress Bars</strong> - Real-time operation feedback</li>
-<li>🌀 <strong>Status Spinners</strong> - Loading indicators</li>
-</ul>
-</div>
-
-<div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 10px; color: white;">
-<h3>🔒 Security Features</h3>
-<ul>
-<li>🎭 <strong>Credential Masking</strong> - Hidden passwords</li>
-<li>🔐 <strong>Partial SSID Display</strong> - First 4 chars + ****</li>
-<li>📝 <strong>Rich Logging</strong> - Timestamped events</li>
-<li>🛡️ <strong>Safe Error Handling</strong> - No data leaks</li>
-</ul>
-</div>
-
-</div>
+### 🔒 Security Features
+- 🎭 **Credential Masking** - Hidden passwords
+- 🔐 **Partial SSID Display** - First 4 chars + ****
+- 📝 **Rich Logging** - Timestamped events
+- 🛡️ **Safe Error Handling** - No data leaks
 
 ---
 
