@@ -21,6 +21,19 @@ logging.basicConfig(
 )
 log = logging.getLogger("welcome_message")
 
+def display_response_info(response, console):
+    """Display API response information in a consistent format"""
+    if isinstance(response, dict):
+        data = response.get('data', {})
+        if isinstance(data, dict):
+            console.print(f"📱 SMS Batch ID: {data.get('smsBatchId', 'N/A')}")
+            console.print(f"👥 Recipients: {data.get('recipientCount', 'N/A')}")
+            console.print(f"📋 Status: {data.get('message', 'SMS queued for processing')}")
+        else:
+            console.print(f"📋 Response: {response}")
+    else:
+        console.print(f"📋 Response: {response}")
+
 def display_customer_info(customer, console):
     """Display customer information in a Rich table"""
     table = Table(title="Customer Information", show_header=True, header_style="bold blue")
@@ -102,29 +115,20 @@ def main():
     try:
         with Status("Connecting to TextBee API...", console=console) as status:
             client = TextBeeClient(api_key, device_id)
+            log.info("TextBee API client initialized")
             
             status.update("Sending message...")
             success, response = client.send_welcome_message(customer.phone_number, welcome_message)
             
-            # Only log connection success after successful API call
             if success:
-                log.info("Successfully connected to TextBee API and sent message")
+                log.info("Message sent successfully via TextBee API")
+            else:
+                log.error("Failed to send message via TextBee API")
         
         if success:
             console.print("✅ Message sent successfully!", style="bold green")
             log.info("Message sent successfully")
-            
-            # Handle response data more safely
-            if isinstance(response, dict):
-                data = response.get('data', {})
-                if isinstance(data, dict):
-                    console.print(f"📱 SMS Batch ID: {data.get('smsBatchId', 'N/A')}")
-                    console.print(f"👥 Recipients: {data.get('recipientCount', 'N/A')}")
-                    console.print(f"📋 Status: {data.get('message', 'SMS queued for processing')}")
-                else:
-                    console.print(f"📋 Response: {response}")
-            else:
-                console.print(f"📋 Response: {response}")
+            display_response_info(response, console)
         else:
             console.print("❌ Failed to send message.", style="bold red")
             console.print(f"Error: {response}", style="red")
